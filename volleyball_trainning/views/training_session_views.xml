@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_volleyball_session_tree" model="ir.ui.view">
+        <field name="name">volleyball.session.tree</field>
+        <field name="model">volleyball.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="duration"/>
+                <field name="focus_area"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_volleyball_session_form" model="ir.ui.view">
+        <field name="name">volleyball.session.form</field>
+        <field name="model">volleyball.session</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="duration"/>
+                        <field name="focus_area"/>
+                        <field name="coach_notes"/>
+                    </group>
+                    <field name="player_ids" mode="kanban">
+                        <tree>
+                            <field name="name"/>
+                            <field name="position"/>
+                            <field name="skill_level"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_volleyball_sessions" name="Training Sessions" parent="menu_volleyball_root" action="action_volleyball_session"/>
+
+    <record id="action_volleyball_session" model="ir.actions.act_window">
+        <field name="name">Training Sessions</field>
+        <field name="res_model">volleyball.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
