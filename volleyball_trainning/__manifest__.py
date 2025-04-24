@@ -19,22 +19,24 @@
 #
 ##############################################################################
 
+
 {
-    'name': 'Training Module March 2025',
-    'version': '18.0.0.0',
-    'summary': 'This Module is for training purposes.',
-    'description': """This Module is for training purposes.
+    'name': 'Volleyball Training',
+    'version': '1.0.0',
+    'summary': 'Manage volleyball training sessions and players',
+    'description': """
+        This module helps manage volleyball training sessions and track player progress.
     """,
-    'category': '',
+    'category': 'Sports',
     'author': 'Madhan', 
     'website': 'www.zbeanztech.com',
-    "license": "LGPL-3",
-    'depends': [],
+    'license': 'LGPL-3',
+    'depends': ['base'],
     'data': [
-        'security/ir.model.access.csv', 
-        'security/security.xml',
-        'views/model_one_view.xml',
-        'views/menu.xml'
+        'security/ir.model.access.csv',
+        'views/player_views.xml',
+        'views/training_session_views.xml',
+        'views/menu.xml',
     ],
     'test': [],
     'demo': [],

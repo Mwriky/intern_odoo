@@ -1,18 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_volleyball_player_tree" model="ir.ui.view">
-        <field name="name">volleyball.player.tree</field>
+    <!-- Player List View -->
+    <record id="view_volleyball_player_list" model="ir.ui.view">
+        <field name="name">volleyball.player.list</field>
         <field name="model">volleyball.player</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="age"/>
                 <field name="position"/>
                 <field name="skill_level"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
+    <!-- Player Form View -->
     <record id="view_volleyball_player_form" model="ir.ui.view">
         <field name="name">volleyball.player.form</field>
         <field name="model">volleyball.player</field>
@@ -26,24 +29,22 @@
                         <field name="skill_level"/>
                         <field name="active"/>
                     </group>
-                    <field name="session_ids" mode="kanban">
-                        <tree>
+                    <field name="session_ids">
+                        <list>
                             <field name="name"/>
                             <field name="date"/>
                             <field name="focus_area"/>
-                        </tree>
+                        </list>
                     </field>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <menuitem id="menu_volleyball_root" name="Volleyball"/>
-    <menuitem id="menu_volleyball_players" name="Players" parent="menu_volleyball_root" action="action_volleyball_player"/>
-
+    <!-- Player Action -->
     <record id="action_volleyball_player" model="ir.actions.act_window">
         <field name="name">Volleyball Players</field>
         <field name="res_model">volleyball.player</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

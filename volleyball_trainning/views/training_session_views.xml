@@ -1,17 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_volleyball_session_tree" model="ir.ui.view">
-        <field name="name">volleyball.session.tree</field>
+    <!-- Training Session List View -->
+    <record id="view_volleyball_session_list" model="ir.ui.view">
+        <field name="name">volleyball.session.list</field>
         <field name="model">volleyball.session</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="date"/>
                 <field name="duration"/>
                 <field name="focus_area"/>
-            </tree>
+            </list>
         </field>
     </record>
 
+    <!-- Training Session Form View -->
     <record id="view_volleyball_session_form" model="ir.ui.view">
         <field name="name">volleyball.session.form</field>
         <field name="model">volleyball.session</field>
@@ -25,23 +28,22 @@
                         <field name="focus_area"/>
                         <field name="coach_notes"/>
                     </group>
-                    <field name="player_ids" mode="kanban">
-                        <tree>
+                    <field name="player_ids">
+                        <list>
                             <field name="name"/>
                             <field name="position"/>
                             <field name="skill_level"/>
-                        </tree>
+                        </list>
                     </field>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <menuitem id="menu_volleyball_sessions" name="Training Sessions" parent="menu_volleyball_root" action="action_volleyball_session"/>
-
+    <!-- Training Session Action -->
     <record id="action_volleyball_session" model="ir.actions.act_window">
         <field name="name">Training Sessions</field>
         <field name="res_model">volleyball.session</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

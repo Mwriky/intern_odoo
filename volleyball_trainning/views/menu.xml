@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu Structure -->
+    <menuitem id="menu_volleyball_root" name="Volleyball"/>
+    
+    <!-- Players Submenu -->
+    <menuitem 
+        id="menu_volleyball_players" 
+        name="Players" 
+        parent="menu_volleyball_root" 
+        action="action_volleyball_player"
+        sequence="10"/>
+    
+    <!-- Training Sessions Submenu -->
+    <menuitem 
+        id="menu_volleyball_sessions" 
+        name="Training Sessions" 
+        parent="menu_volleyball_root" 
+        action="action_volleyball_session"
+        sequence="20"/>
+</odoo>
